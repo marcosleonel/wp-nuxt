@@ -1,23 +1,13 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
+      <img class="logo" src="/logo-abda-filarmonica.png" alt="Logo da ABDA Filarmônica" />
       <h1 class="title">
-        abda-filarmonica-frontend
+        ABDA Filarmônica
       </h1>
       <h2 class="subtitle">
         Website da orquestra filarmônica da ABDA.
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
     </div>
   </section>
 </template>
@@ -60,6 +50,11 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.logo {
+  max-height: 300px;
+  width: auto;
 }
 </style>
 
