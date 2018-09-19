@@ -4,40 +4,35 @@ import WPAPI from 'wpapi';
 const wp = new WPAPI({ endpoint: 'http://filarmonica.abdabauru.com.br/cms/wp-json/' });
 
 export const types = {
-  SITE_DATA_UPDATE: 'SITE_DATA_UPDATE',
-  AUTHORS_UPDATE: 'AUTHORS_UPDATE',
-  CURRENT_POST_UPDATE: 'CURRENT_POST_UPDATE'
+  POSTS_UPDATE: 'POSTS_UPDATE',
+  PAGES_UPDATE: 'PAGES_UPDATE',
 };
 
 const createStore = () => {
-  return Vuex.Store({
+  return new Vuex.Store({
     state: {
-      site_data: {},
-      authors: {},
-      current_post: {}
+      posts: {},
+      pages: {},
     },
     mutations: {
-      [types.SITE_DATA_UPDATE] (state, payload) {
-        state.site_data = { ...payload }
+      [types.POSTS_UPDATE] (state, payload) {
+        state.posts = { ...payload }
       },
-      [types.AUTHORS_UPDATE] (state, payload) {
-        state.authors = { ...payload }
-      },
-      [types.CURRENT_POST_UPDATE] (state, payload) {
-        state.current_post = { ...payload }
+      [types.PAGES_UPDATE] (state, payload) {
+        state.pages = { ...payload }
       }
     },
     actions: {
       nuxtServerInit( { commit }) {
-        const getSiteData = wp.site_data()
+        const getPostsData = wp.posts()
           .then( response => {
-            commit(types.SITE_DATA_UPDATE, response.site_data);
+            commit(types.POSTS_UPDATE, response.posts);
           });
-        const getAuthors = wp.authors()
+        const getPages = wp.pages()
           .then( response => {
-            commit(types.AUTHORS_UPDATE, response.authors);
+            commit(types.PAGES_UPDATE, response.pages);
           });
-        return Promise.all([getSiteData, getAuthors]);
+        return Promise.all([getPostsData, getPages]);
       }
     }
   });
