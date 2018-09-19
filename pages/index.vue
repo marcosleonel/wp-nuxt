@@ -18,7 +18,10 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
-  }
+  },
+  mounted() {
+    console.log(`Posts: ${this.$store.state.posts}`);
+  },
 }
 </script>
 
@@ -57,4 +60,3 @@ export default {
   width: auto;
 }
 </style>
-
