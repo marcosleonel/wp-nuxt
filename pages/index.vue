@@ -8,16 +8,19 @@
       <h2 class="subtitle">
         Website da orquestra filarmônica da ABDA.
       </h2>
+      <PostExcerpt :post="$store.state.posts[0]" />
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import PostExcerpt from '~/components/postExcerpt/postExcerpt.vue'
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    PostExcerpt
   },
   mounted() {
     console.log(`Posts: ${this.$store.state.posts}`);

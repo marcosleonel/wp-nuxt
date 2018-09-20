@@ -37,6 +37,8 @@ module.exports = {
   },
   modules: [
     'bootstrap-vue/nuxt'
-  ]
+  ],
+  css: ['@/assets/css/style.scss'],
+  plugins: ['~/plugins/date-filter']
 }
 
