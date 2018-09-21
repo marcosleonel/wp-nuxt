@@ -1,4 +1,5 @@
 <template>
+  <img :src="post | featured-img"  alt />
   <b-container>
     <b-card :title="post.title.rendered" tag="article">
         <small class="post__date">Publicado em {{ post.date | date-filter }}</small>
