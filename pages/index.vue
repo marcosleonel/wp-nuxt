@@ -23,10 +23,7 @@ export default {
     AppLogo,
     PostExcerpt,
     PostFull
-  },
-  mounted() {
-    console.log(`Posts: ${this.$store.state.posts}`);
-  },
+  }
 }
 </script>
 
