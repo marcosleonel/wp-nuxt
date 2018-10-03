@@ -1,6 +1,6 @@
 <template>
   <div class="post__cover">
-    <b-img :src="featuredImage._result" alt="Image" />
+   <!--  <b-img :src="featuredImage._result" alt="Image" /> -->
 
     <b-container>
       <b-row>

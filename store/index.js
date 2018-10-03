@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: 'http://filarmonica.abdabauru.com.br/cms/wp-json/' });
+const wp = new WPAPI({ endpoint: 'http://admin.abdabauru.com.br/wp-json' });
 
 export const types = {
   POSTS_UPDATE: 'POSTS_UPDATE',
@@ -13,7 +13,8 @@ export const types = {
   CATEGORIES_UPDATE: 'CATEGORIES_UPDATE',
   STATUSES_UPDATE: 'STATUSES_UPDATE',
   USERS_UPDATE: 'USERS_UPDATE',
-  MEDIA_UPDATE: 'MEDIA_UPDATE'
+  MEDIA_UPDATE: 'MEDIA_UPDATE',
+  MENUS_UPDATE: 'MENUS_UPDATE'
 };
 
 const createStore = () => {
@@ -28,7 +29,8 @@ const createStore = () => {
       categories: {},
       statuses: {},
       users: {},
-      media: {}
+      media: {},
+      menus: {}
     },
     mutations: {
       [types.POSTS_UPDATE] (state, payload) {
@@ -56,10 +58,13 @@ const createStore = () => {
         state.statuses = { ...payload }
       },
       [types.USERS_UPDATE] (state, payload) {
-        state.media = { ...payload }
+        state.users = { ...payload }
       },
       [types.MEDIA_UPDATE] (state, payload) {
         state.media = { ...payload }
+      },
+      [types.MENUS_UPDATE] (state, payload) {
+        state.menus = { ...payload }
       }
     },
     actions: {
@@ -124,6 +129,12 @@ const createStore = () => {
           }).catch( error => {
             console.log('[Store Error]: getMedia failed', error);
           });
+        const getMenu = wp.namespace('menus/v1/menus')
+          .then(response => {
+            commit(type.MENUS_UPDATE, response);
+          }).catch( error => {
+            console.log('[Store Error]: getMedia failed', error);
+          });
 
         return Promise.all([
           getPostsData,
@@ -135,7 +146,8 @@ const createStore = () => {
           getCategories,
           getStatuses,
           getUsers,
-          getMedia
+          getMedia,
+          getMenu
         ]);
       }
     }
