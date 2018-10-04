@@ -1,7 +1,13 @@
+import Vue from 'vue';
 import Vuex from 'vuex';
 import WPAPI from 'wpapi';
+import axios from 'axios';
+
+//Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://admin.abdabauru.com.br';
+//Vue.http.headers.common['Access-Control-Request-Method'] = '*';
 
 const wp = new WPAPI({ endpoint: 'http://admin.abdabauru.com.br/wp-json' });
+const autoDiscovery = WPAPI.discover( 'http://admin.abdabauru.com.br/' );
 
 export const types = {
   POSTS_UPDATE: 'POSTS_UPDATE',
@@ -129,12 +135,16 @@ const createStore = () => {
           }).catch( error => {
             console.log('[Store Error]: getMedia failed', error);
           });
-        const getMenu = wp.namespace('menus/v1/menus')
-          .then(response => {
-            commit(type.MENUS_UPDATE, response);
-          }).catch( error => {
-            console.log('[Store Error]: getMedia failed', error);
-          });
+        const getCustomRoutes = autoDiscovery
+          .then( site => {
+            console.log('Site: ' + site);
+            axios.get(site._ns['menus/v1'])
+              .then(response => {
+                commit(type.MENUS_UPDATE, response);
+              }).catch( error => {
+                console.log('[Store Error]: getCustomRoutes failed', error);
+              });
+        });
 
         return Promise.all([
           getPostsData,
@@ -147,7 +157,7 @@ const createStore = () => {
           getStatuses,
           getUsers,
           getMedia,
-          getMenu
+          getCustomRoutes
         ]);
       }
     }

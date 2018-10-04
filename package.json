@@ -4,28 +4,45 @@
   "description": "Website da orquestra filarmônica da ABDA.",
   "author": "Marcos Leonel <marcos@zeonsolutions.com.br>",
   "private": true,
+  "babel": {
+    "presets": [
+      "env",
+      "vue-app",
+      "es2015"
+    ]
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "test": "nuxt-jest-puppeteer"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0-rc.11",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "nuxt": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "wpapi": "^1.1.2"
+    "test": "^0.6.0",
+    "vue": "^2.5.17",
+    "webpack": "^4.20.2",
+    "wpapi": "^1.1.2",
+    "yarn": "^1.12.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.1",
+    "babel-polyfill": "^6.26.0",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.0.0",
+    "nuxt-jest-puppeteer": "^0.3.8",
+    "vue-template-compiler": "^2.5.17"
   }
 }
