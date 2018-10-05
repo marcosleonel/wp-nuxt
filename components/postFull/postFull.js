@@ -5,10 +5,10 @@ export default {
   props: {
     post: { type: Object }
   },
-  /* computed: {
+  computed: {
     featuredImage () {
       return wp.media().id(this.post.featured_media)
         .then( response => response.source_url);
     },
-  } */
+  }
 };

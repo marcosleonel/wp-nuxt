@@ -1,0 +1,37 @@
+{
+  "_ns":{
+    "wp/v2":{
+      "_options":{
+        "endpoint":"http://admin.abdabauru.com.br/wp-json/",
+        "transport":{}
+        }
+      },
+      "oembed/1.0":{
+        "_options":{
+          "endpoint":"http://admin.abdabauru.com.br/wp-json/","transport":{}
+          }
+      },
+      "gutenberg/v1":{
+        "_options":{
+          "endpoint":"http://admin.abdabauru.com.br/wp-json/",
+          "transport":{}
+        }
+      },
+      "menus/v1":{
+        "_options":{
+          "endpoint":"http://admin.abdabauru.com.br/wp-json/",
+          "transport":{}
+          }
+        },
+      "acf/v3":{
+        "_options":{
+          "endpoint":"http://admin.abdabauru.com.br/wp-json/",
+          "transport":{}
+        }
+      }
+  },
+  "_options":{
+    "endpoint":"http://admin.abdabauru.com.br/wp-json/",
+    "transport":{}
+  }
+}

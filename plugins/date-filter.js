@@ -1,8 +1,6 @@
 import Vue from 'vue';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 
-const locale = 'pt-br';
-
-Vue.filter('date-filter', (input) => {
-  return moment(input).locale(locale).format('LLL');
+Vue.filter('dateFilter', (input) => {
+  return DateTime.fromISO(input).setZone('America/Sao_Paulo').setLocale('pt-br').toLocaleString(DateTime.DATETIME_MED);
 });
