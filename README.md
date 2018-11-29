@@ -1,23 +1,11 @@
-# abda-filarmonica-frontend
+![Logo of the project](./wp-nuxt-logo.png)
 
-> Website da orquestra filarmônica da ABDA.
+# WP NUXT &middot; [[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE.md)
+> A productive union between [Nuxt.js](https://nuxtjs.org/) and [WP REST API](https://v2.wp-api.org/) to build websites.
 
-## Build Setup
+This is a project under construction.
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Licensing
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+State what the license is and how to find the text version of the license.

@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import WPAPI from 'wpapi';
 
-const wp = new WPAPI({ endpoint: 'http://admin.abdabauru.com.br/wp-json' });
+const wp = new WPAPI({ endpoint: 'http://your-wordpress-site.com/wp-json' });
 
 export const types = {
   POSTS_UPDATE: 'POSTS_UPDATE',

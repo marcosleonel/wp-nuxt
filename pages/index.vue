@@ -3,62 +3,14 @@
     <div>
       <img class="logo" src="/logo-abda-filarmonica.png" alt="Logo da ABDA Filarmônica" />
       <h1 class="title">
-        ABDA Filarmônica
+        WP NUXT
       </h1>
       <h2 class="subtitle">
-        Website da orquestra filarmônica da ABDA.
+        A productive union between Nuxt.js and WP REST API to build websites.
       </h2>
-      <PostFull :post="$store.state.posts[0]" />
+      <!-- <PostFull :post="$store.state.posts[0]" /> -->
     </div>
   </section>
 </template>
 
-<script>
-import AppLogo from '~/components/AppLogo.vue';
-import PostExcerpt from '~/components/postExcerpt/postExcerpt.vue';
-import PostFull from '~/components/postFull/postFull.vue';
-
-export default {
-  components: {
-    AppLogo,
-    PostExcerpt,
-    PostFull
-  }
-}
-</script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-
-.logo {
-  max-height: 300px;
-  width: auto;
-}
-</style>
+<script src="./index.js"></script>
