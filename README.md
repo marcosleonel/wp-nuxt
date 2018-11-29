@@ -8,4 +8,4 @@ This is a project under construction.
 
 ## Licensing
 
-State what the license is and how to find the text version of the license.
+[MIT](./LICENSE.md)
